@@ -8,7 +8,7 @@ $allowedHTML = wp_kses_allowed_html( 'post' );
 <div>
 
     <h1>Settings</h1>
-    
+
     <p>Visit <a href="https://www.html5andbeyond.com/custom-css-whole-site-and-per-post-wordpress-plugin/">HTML5andBeyond</a> for instruction and a couple of useful CSS snippets to use</p>
 
 	<form method="post" enctype="multipart/form-data">

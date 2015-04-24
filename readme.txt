@@ -1,8 +1,8 @@
 === Custom CSS - Whole Site and Per Post ===
 Contributors: html5andblog, apritchard2751
-Tags: css, custom style, custom styling, custom css, additional css, styling, stylesheet, external stylesheet, post styling, post css, page styling, page css, custom styles, single post CSS, single post styling, single page CSS, single page styling, external CSS
-Requires at least: 4
-Tested up to: 4.1.1
+Tags: custom style, custom styling, custom css, additional css, styling, css, stylesheet, external stylesheet, post styling, post css, page styling, page css
+Requires at least: 4.0
+Tested up to: 4.2
 License: GPL2 or Later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,14 +12,14 @@ Add Custom CSS Styling to your WordPress Site - Style the Whole Site or Specific
 
 Add Custom CSS Styling to your WordPress Site - Style the Whole Site or Specific Posts / Pages. Easily Add Styling and External Stylesheets.
 
-**Key Features**
+== Key Features ==
 
 * Add custom CSS to the whole site or specific posts and pages
 * Line numbering for ease of use
 * Add external stylesheet as well as additional CSS
 * Quick to get started - just activate and start adding CSS styles
 
-**Credits** 
+== Credits == 
 
 [JQuery Lined TextArea plugin](http://alan.blog-city.com/jquerylinedtextarea.htm) - [MIT Licensed](http://www.opensource.org/licenses/mit-license.php) - Copyright (c) 2010 Alan Williamson http://alan.blog-city.com/
 
@@ -61,6 +61,11 @@ Font used on Banners and Icons - [Oswald](https://www.google.com/fonts/specimen/
 2. Add Custom Site / Post / Page Styling
 
 == Changelog ==
+
+**Version 1**
+
+* Official Release
+* Modified Plugin to only delete data on uninstall, instead of deactivate
 
 **Version 0.1**
 

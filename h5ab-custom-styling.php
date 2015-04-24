@@ -4,7 +4,7 @@
  * Plugin Name: Custom CSS - Whole Site and Per Post
  * Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
  * Description: Add Custom CSS Styling to your WordPress Site - Style the Whole Site or Specific Posts / Pages. Easily Add Styling and External Stylesheets.
- * Version: 0.11
+ * Version: 1.0
  * Author: HTML5andBeyond
  * Author URI: https://www.html5andbeyond.com/
  * License: GPL2 or Later
@@ -212,20 +212,12 @@
 
                 }
 
-                public static function deactivate() {
-                    delete_option( 'h5abCustomExternal' );
-                    delete_option( 'h5abCustomStyling' );
-					delete_post_meta_by_key( 'h5abMetaStylingExternal' );
-					delete_post_meta_by_key( 'h5abMetaStylingData' );
-				}
 
             }
 
 	}
 
 	if(class_exists('H5AB_Custom_Styling')) {
-
-        register_deactivation_hook( __FILE__, array('H5AB_Custom_Styling' , 'deactivate'));
 
 		$H5AB_Custom_Styling = new H5AB_Custom_Styling();
 
