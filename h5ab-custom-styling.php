@@ -20,9 +20,9 @@
 	if(!class_exists('H5AB_Custom_Styling')) {
 
 			class H5AB_Custom_Styling {
-				
+
 			    private $formResponse = "";
-				
+
                 public static $h5ab_custom_styling_kses = array(
                     'link' => array(
                         'href' => array(),
@@ -77,12 +77,12 @@
 				public function load_scripts() {
 
 				}
-				
+
 				public function setFormResponse($response) {
 					$class = ($response['success']) ? 'updated' : 'error';
 				    $this->formResponse =  '<div = class="' . $class . '"><p>' . $response['message'] . '</p></div>';
 				}
-				
+
 				public function getFormResponse() {
 				    $fr = $this->formResponse;
 				    echo $fr;
@@ -95,7 +95,7 @@
 							if(wp_verify_nonce( $_POST['h5ab_custom_styling_site_nonce'], 'h5ab_custom_styling_site_n' )) {
 
 								$response = h5ab_custom_styling_site();
-								
+
 								$this->setFormResponse($response);
 
 								add_action('admin_notices',  array($this, 'getFormResponse'));
