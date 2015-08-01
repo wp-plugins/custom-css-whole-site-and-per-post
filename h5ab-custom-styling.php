@@ -4,7 +4,7 @@
  * Plugin Name: Custom CSS - Whole Site and Per Post
  * Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
  * Description: Add Custom CSS Styling to your WordPress Site - Style the Whole Site or Specific Posts / Pages. Easily Add Styling and External Stylesheets.
- * Version: 1.0
+ * Version: 1.1
  * Author: HTML5andBeyond
  * Author URI: https://www.html5andbeyond.com/
  * License: GPL2 or Later
@@ -20,7 +20,9 @@
 	if(!class_exists('H5AB_Custom_Styling')) {
 
 			class H5AB_Custom_Styling {
-
+				
+			    private $formResponse = "";
+				
                 public static $h5ab_custom_styling_kses = array(
                     'link' => array(
                         'href' => array(),
@@ -75,6 +77,16 @@
 				public function load_scripts() {
 
 				}
+				
+				public function setFormResponse($response) {
+					$class = ($response['success']) ? 'updated' : 'error';
+				    $this->formResponse =  '<div = class="' . $class . '"><p>' . $response['message'] . '</p></div>';
+				}
+				
+				public function getFormResponse() {
+				    $fr = $this->formResponse;
+				    echo $fr;
+				}
 
                 public function validate_form_callback() {
 
@@ -83,12 +95,10 @@
 							if(wp_verify_nonce( $_POST['h5ab_custom_styling_site_nonce'], 'h5ab_custom_styling_site_n' )) {
 
 								$response = h5ab_custom_styling_site();
+								
+								$this->setFormResponse($response);
 
-								add_action('admin_notices', function() use ($response) {
-											$class = ($response['success']) ? 'updated' : 'error';
-				?>
-													<div class="<?php echo $class; ?>"><p><?php echo $response['message']; ?></p></div>
-				<?php		});
+								add_action('admin_notices',  array($this, 'getFormResponse'));
 
 							} else {
 								wp_die("You do not have access to this page");
